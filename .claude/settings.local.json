@@ -1,0 +1,23 @@
+{
+    "permissions": {
+        "allow": [],
+        "deny": []
+    },
+    "hooks": {
+        "PostToolUse": [
+            {
+                "matcher": "Write|Edit|MultiEdit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "if [ -n \"$FILE_PATH\" ] && [[ \"$FILE_PATH\" == *.py ]]; then echo \"[RUFF CHECK] $FILE_PATH\"; uv run ruff check \"$FILE_PATH\" --no-fix || echo \"[RUFF] Issues found in $FILE_PATH - run 'ruff check --fix' to auto-fix\"; fi"
+                    },
+                    {
+                        "type": "command",
+                        "command": "if [ -n \"$FILE_PATH\" ] && [[ \"$FILE_PATH\" == *.py ]]; then uv run ruff format \"$FILE_PATH\"; fi"
+                    }
+                ]
+            }
+        ]
+    }
+}
