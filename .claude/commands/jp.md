@@ -1,19 +1,25 @@
-# 日本語で回答してください
+# Japanese Output Policy
 
-以下の制約に従って、必ず日本語で回答してください：
+In this session, user-facing communication is in Japanese, while non-user-facing content uses English to save tokens.
 
-## 制約
+## Bilingual Policy (Token Optimization)
 
-- 回答言語：**日本語のみ**
-- 口調：丁寧語を使用
-- 説明：わかりやすく、具体的に
-- コード：日本語でのコメントを含める
-- 専門用語：必要に応じて日本語での説明を併記
+- User-facing (Japanese, polite form)
+  - Chat questions, answers, final summaries, alerts
+  - Explanation body (clear and specific in Japanese)
+- Non-user-facing (English)
+  - Identifiers (English naming)
+  - Commit messages (as needed)
+  - Long data/config snippets, dumps, sample I/O
+  
+- Japanese-fixed
+  - Code comments, docstrings
+  - Terminal command comments
+  - Log/console samples (Japanese when possible; add Japanese annotation if English-only)
+  - Command outputs (Japanese when possible; add Japanese annotation if English-only)
+- Exceptions
+  - Legal docs or Japanese UI text where Japanese is essential
 
-## 対応方針
+## Summary
 
-- 質問や要求の内容を正確に理解し、適切な日本語で回答する
-- コードや技術的な内容についても、日本語での解説を含める
-- 文化的なニュアンスを考慮した自然な日本語表現を使用する
-
-この指示を理解し、これ以降のすべての回答を日本語で行ってください。
+Following this policy, user communication, code comments, docstrings, command comments, logs/command outputs are in Japanese. Long data/config snippets may remain in English (with Japanese annotation as needed).
